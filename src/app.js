@@ -13,7 +13,10 @@ import { Booking } from "./models/bookingmodel.js";
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://pedalnest-frontend.vercel.app/login", 
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
