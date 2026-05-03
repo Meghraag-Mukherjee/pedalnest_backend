@@ -3,7 +3,11 @@ dotenv.config();
 
 export const env = {
   port: process.env.PORT || 4000,
-  dbUrl: process.env.DB_URL,
+  dbHost: process.env.DB_HOST,
+  dbPort: process.env.DB_PORT || 4000,
+  dbUser: process.env.DB_USER,
+  dbPassword: process.env.DB_PASSWORD,
+  dbName: process.env.DB_NAME || "test",
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "1h",
   PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
