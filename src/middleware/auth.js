@@ -14,3 +14,13 @@ export const authRequired = (req, res, next) => {
     return res.status(401).json({ message: "Invalid or expired token" });
   }
 };
+
+// Add this to handle Admin-only routes
+export const roleRequired = (roles) => {
+  return (req, res, next) => {
+    if (!req.user || !roles.includes(req.user.role)) {
+      return res.status(403).json({ message: "Forbidden: Access denied" });
+    }
+    next();
+  };
+};
