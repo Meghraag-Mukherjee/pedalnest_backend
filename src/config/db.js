@@ -5,7 +5,7 @@ import { env } from "./env.js";
 export const sequelize = new Sequelize(
   env.dbName,     // 'test'
   env.dbUser,     // 'rhYyokg3ufEFofR.root'
-  env.dbPassword, // 'M1dD3dLzrnmbiWbv'
+  env.dbPassword, // 
   {
     host: env.dbHost,
     port: env.dbPort,
