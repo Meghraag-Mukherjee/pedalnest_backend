@@ -14,8 +14,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://pedalnest-frontend.vercel.app/login", 
-  credentials: true
+  origin: "https://pedalnest-frontend.vercel.app", 
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 
